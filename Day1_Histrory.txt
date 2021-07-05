@@ -236,3 +236,45 @@
   236  cd ..
   237  ls
   238  history > Day1_Histrory.txt 
+  239  git add . ; git commit -m "Day1_Histrory.txt"; git push 
+  240  ls
+  241  cd 01-Docker/02-Dockerfile/
+  242  ls
+  243  mkdir python-webapp
+  244  ls
+  245  cd python-webapp/
+  246  ls
+  247  vim Dockerfile
+  248  cat Dockerfile 
+  249  vim req.txt
+  250  ls
+  251  vim app.py
+  252  ls
+  253  docker build -t mypython-webapp:v1 . 
+  254  docker ps 
+  255  docker images 
+  256  docker run -d test-python-webapp-1 mypython-webapp:v1
+  257  docker run -d --name test-python-webapp-2 mypython-webapp:v1
+  258  docker ps 
+  259  ls
+  260  chmod +x app.py 
+  261  ls
+  262  docker images 
+  263  docker ps -a 
+  264  docker logs 64a98936d6a9
+  265  ls
+  266  vim app.py 
+  267  docker build -t mypython-webapp:v1 . 
+  268  docker run -d --name test-python-webapp-3 mypython-webapp:v1
+  269  docker ps 
+  270  docker inspect 2adaa9334a5e
+  271  curl "172.17.0.12"
+  272  docker ps 
+  273  docker images 
+  274  cd ..
+  275  ls
+  276  cd ..
+  277  ls
+  278  cd ..
+  279  ls
+  280  history > Day1_Histrory.txt 
