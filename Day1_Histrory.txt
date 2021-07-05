@@ -178,3 +178,61 @@
   178  cd docker-k8s-AZ-05-July-2021/
   179  ls
   180  history > Day1_Histrory.txt 
+  181  git add . ; git commit -m "Day1_Histrory.txt"; git push 
+  182  git config --global credential.helper 'cache --timeout=360000'
+  183  ls
+  184  docker images 
+  185  docker run -it ubuntu 
+  186  docker run -it --name test-apache-1 ubuntu:16.04 
+  187  docker ps 
+  188  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}'  test-apache-1
+  189  curl 172.17.0.6
+  190  docker run -it --name test-apache-1 ubuntu:16.04 
+  191  docker attach test-apache-1
+  192  curl 172.17.0.6
+  193  curl 172.17.0.6/hello.html
+  194  ls
+  195  cd 01-Docker/
+  196  ls
+  197  mkdir 02-Dockerfile/apache -p 
+  198  cd 02-Dockerfile/
+  199  ls
+  200  cd apache/
+  201  ls
+  202  vim Dockerfile
+  203  ls
+  204  docker build -t myubuntu-apache:v1 . 
+  205  docker images 
+  206  docker run -d --name apache-v1-1 myubuntu-apache:v1 
+  207  vim Dockerfile 
+  208  docker build -t myubuntu-apache:v1 . 
+  209  docker run -d --name apache-v1-2 myubuntu-apache:v1 
+  210  docker ps 
+  211  docker run -d --name apache-v1-3 myubuntu-apache:v1 
+  212  docker run -d --name apache-v1-4 myubuntu-apache:v1 
+  213  docker ps 
+  214  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}'  apache-v1-2
+  215  curl 172.17.0.7
+  216  curl 172.17.0.8
+  217  curl 172.17.0.9
+  218  curl 172.17.0.10
+  219  ls
+  220  vim index.html
+  221  ls
+  222  vim Dockerfile 
+  223  docker build -t myubuntu-apache:v2 . 
+  224  docker run -d --name apache-v2-1 myubuntu-apache:v2
+  225  docker run -d --name apache-v2-2 myubuntu-apache:v2
+  226  docker images 
+  227  docker ps 
+  228  curl 172.17.0.10
+  229  curl 172.17.0.11
+  230  curl 172.17.0.9
+  231  ls
+  232  cd ..
+  233  ls
+  234  cd ..
+  235  ls
+  236  cd ..
+  237  ls
+  238  history > Day1_Histrory.txt 
