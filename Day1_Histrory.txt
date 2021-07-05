@@ -72,3 +72,109 @@
    72  ls
    73  history 
    74  history  > Day1_Histrory.txt
+   75  ls
+   76  git add . ; git commit -m "Day1_Histrory.txt"; git push 
+   77  docker images 
+   78  history 
+   79  history | grep -i images 
+   80  history | grep -i ubuntu
+   81  docker images 
+   82  docker pull ubuntu:16.04
+   83  docker images 
+   84  docker search ubuntu
+   85  ls
+   86  docker images 
+   87  docker rmi amitvashist7/python-webapp:v1
+   88  docker images 
+   89  docker rmi amitvashist7/apache-ex4
+   90  docker ps 
+   91  cd /var/lib/docker/
+   92  ls
+   93  cd image/
+   94  ls
+   95  cd aufs/
+   96  ls
+   97  cd distribution/
+   98  ls
+   99  cd v2metadata-by-diffid/sha256/
+  100  ls
+  101  file feef05f055c989eea0367f5d3a2cba79896dd6d8a8b72bea2c729548a4ca5aef
+  102  cat feef05f055c989eea0367f5d3a2cba79896dd6d8a8b72bea2c729548a4ca5a
+  103  ls -ltr 
+  104  cat d07b1c131bb82990f51d073a52ef1f71fa8cbbbee611afc4edaa4b2700c9e716
+  105  ls
+  106  cd ..
+  107  ls
+  108  cd ..
+  109  cd -
+  110  ls
+  111  cd ..
+  112  ls
+  113  cd 
+  114  ls
+  115  docker images 
+  116  docker run ubuntu:16.04
+  117  docker ps 
+  118  docker ps -a
+  119  docker run -it ubuntu:16.04
+  120  docker ps 
+  121  docker ps -a
+  122  docker run -it ubuntu:16.04
+  123  docker ps -a
+  124  docker run -it ubuntu:16.04
+  125  docker ps -a
+  126  docker run -it --name test-job-1 ubuntu:16.04
+  127  ls
+  128  docker ps -a 
+  129  docker ps 
+  130  docker start test-job-1
+  131  docker ps 
+  132  docker ps -a 
+  133  docker ps 
+  134  docker attach test-job-1
+  135  docker ps 
+  136  docker exec -it test-job-1 cat Hello.txt
+  137  docker exec -it f89426fd3fec cat Hello.txt
+  138  docker exec -it f89426fd3fec ip addr 
+  139  docker exec -it f89426fd3fec "ip addr"
+  140  ip addr 
+  141  docker ps 
+  142  docker kill test-job-1
+  143  docker ps -a 
+  144  docker start test-job-1
+  145  docker ps 
+  146  docker stop test-job-1
+  147  docker ps 
+  148  docker ps -a 
+  149  docker start test-job-1
+  150  ls -ltr 
+  151  docker attach test-job-1
+  152  ld
+  153  docker ps 
+  154  docker ps -a 
+  155  docker rm test-job-1
+  156  docker ps -a 
+  157  ls
+  158  docker ps 
+  159  docker ps -a
+  160  docker ps -aq
+  161  docker rm $(docker ps -aq)
+  162  docker ps -a 
+  163  docker ps --help
+  164  ls
+  165  docker run -it --name test-job-1 ubuntu:16.04
+  166  docker run -itd --name test-job-2 ubuntu:16.04
+  167  docker run -itd --name test-job-3 ubuntu:16.04
+  168  docker run -itd --name test-job-4 ubuntu:16.04
+  169  docker ps 
+  170  docker ps -l
+  171  docker ps -lq
+  172  docker inspect test-job-4
+  173  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}'  test-job-4
+  174  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}'  test-job-3
+  175  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}'  test-job-2
+  176  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}'  test-job-1
+  177  ls
+  178  cd docker-k8s-AZ-05-July-2021/
+  179  ls
+  180  history > Day1_Histrory.txt 
