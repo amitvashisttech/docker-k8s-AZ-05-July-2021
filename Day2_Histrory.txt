@@ -1,0 +1,104 @@
+    1  docker ps 
+    2  docker kill $(docker ps -aq)
+    3  docker rm $(docker ps -aq)
+    4  ls
+    5  docker volume ls 
+    6  docker images 
+    7  docker run -it -v /var/www/html --name volume-test-1 ubuntu:16.04 
+    8  docker ps 
+    9  docker volume ls 
+   10  docker inspect 9edb9898dc4a
+   11  cd "/var/lib/docker/volumes/0082f4522ff7cf485adbd671b006ff1c746084a95a2e6c49bdd6ca21eefdd02a/_data"
+   12  ls
+   13  cat hello-volume.txt 
+   14  hostname
+   15  hostname -i 
+   16  hostname -f
+   17  hostname -f >> hello-volume.txt
+   18  date >> hello-volume.txt
+   19  ls
+   20  cat hello-volume.txt 
+   21  cd 
+   22  ls
+   23  docker ps 
+   24  docker attach volume-test-1
+   25  ls
+   26  docker ps 
+   27  docker ps -a 
+   28  docker start volume-test-1
+   29  docker attach volume-test-1
+   30  ls
+   31  docker rm $(docker ps -aq) 
+   32  docker ps -a 
+   33  docker volume ls 
+   34  docker volume inspect 0082f4522ff7cf485adbd671b006ff1c746084a95a2e6c49bdd6ca21eefdd02a
+   35  cd "/var/lib/docker/volumes/0082f4522ff7cf485adbd671b006ff1c746084a95a2e6c49bdd6ca21eefdd02a/_data"
+   36  l;s
+   37  ls
+   38  cat hello-volume.txt 
+   39  cd 
+   40  ls
+   41  docker volume ls 
+   42  docker volume create my-vol-apache
+   43  docker volume ls 
+   44  docker ps 
+   45  docker images 
+   46  docker run -it -v my-vol-apache:/app --name volume-test-1 ubuntu:16.04 
+   47  docker run -it -v my-vol-apache:/app --name volume-test-2 ubuntu:16.04 
+   48  docker top 
+   49  docker ps 
+   50  docker top 4dc00e3f51bc
+   51  docker ps 
+   52  docker inspect volume-test-2
+   53  docker attach volume-test-2
+   54  docker run -it -v /app --name volume-test-3 ubuntu:16.04 
+   55  docker kill $(docker ps -qa) 
+   56  docker rm $(docker ps -qa) 
+   57  docker volume ls 
+   58  docker volume ls -q
+   59  docker volume rm $(docker volume ls -q) 
+   60  ls
+   61  docker run -it -v /var/www/html --name volume-test-3 ubuntu:16.04 
+   62  docker run -it -v /var/www/html --name volume-test-4 ubuntu:16.04 
+   63  docker volume ls 
+   64  docker attach volume-test-4
+   65  docker run -it -v /var/amit --name volume-test-5 ubuntu:16.04 
+   66  docker run -it -v /var/www/amit --name volume-test-5 ubuntu:16.04 
+   67  docker run -it -v /var/www/amit --name volume-test-6 ubuntu:16.04 
+   68  docker run -it -v /var/log/amit --name volume-test-7 ubuntu:16.04 
+   69  docker run -it -v /var/amit/vashist --name volume-test-8 ubuntu:16.04 
+   70  docker run -it -v /amit/vashist --name volume-test-9 ubuntu:16.04 
+   71  ls
+   72  docker images 
+   73  docker ps -a 
+   74  docker kill $(docker ps -aq ) 
+   75  docker rm $(docker ps -aq ) 
+   76  docker volume rm $(docker volume ls -q) 
+   77  ls
+   78  cd docker-k8s-AZ-05-July-2021/
+   79  ls
+   80  pwd
+   81  docker run -it -v /root/docker-k8s-AZ-05-July-2021:/amit/vashist --name volume-test-1 ubuntu:16.04 
+   82  docker ps 
+   83  ls
+   84  cat hello.txt 
+   85  docker run -it -v /root/docker-k8s-AZ-05-July-2021:/amit/vashist:ro --name volume-test-2 ubuntu:16.04 
+   86  ls
+   87  docker run -itd -v /var/log/amit -v /var/www/html/amit -v /opt/SP/apps/amit --name my-storage ubuntu:16.04 
+   88  docker ps 
+   89  docker inspect my-storage
+   90  ls
+   91  docker image
+   92  docker images 
+   93  docker run -itd --volume-from my-storage --name test-centos-1 bash
+   94  docker run -itd --volumes-from my-storage --name test-centos-1 bash
+   95  docker run -itd --volumes-from my-storage --name test-centos-1 centos:8 bash
+   96  docker run -itd --volumes-from my-storage --name test-centos-2 centos:8 bash
+   97  docker run -itd --volumes-from my-storage --name test-centos-3 centos:8 bash
+   98  docker run -itd --volumes-from my-storage --name test-centos-4 centos:8 bash
+   99  docker run -itd --volumes-from my-storage --name test-centos-5 centos:8 bash
+  100  docker inspect test-centos-5
+  101  docker attach test-centos-5
+  102  docker attach test-centos-4
+  103  ls
+  104  history > Day2_Histrory.txt
