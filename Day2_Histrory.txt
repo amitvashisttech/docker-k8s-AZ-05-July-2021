@@ -102,3 +102,141 @@
   102  docker attach test-centos-4
   103  ls
   104  history > Day2_Histrory.txt
+  105  git add . ; git commit -m "Day2_Histrory.txt"; git push 
+  106  docker ps 
+  107  docker network ls 
+  108  docker network inspect bridge
+  109  ip addr 
+  110  ls
+  111  docker kill $(docker ps -aq )
+  112  docker network inspect bridge
+  113  docker run -itd  --name test-centos-5 centos:8 bash
+  114  docker run -itd  --name test-centos-10 centos:8 bash
+  115  docker network inspect bridge
+  116  docker ps 
+  117  docker exec -it test-centos-10 ip addr 
+  118  docker ps 
+  119  docker ps -a 
+  120  docker start test-centos-4
+  121  docker ps 
+  122  docker exec -it test-centos-4 ip addr 
+  123  docker exec -it test-centos-10 ip addr 
+  124  docker network inspect bridge
+  125  docker ps 
+  126  docker images 
+  127  docker network ls
+  128  docker network create my-net-01
+  129  docker network ls
+  130  docker network inspect my-net-01
+  131  ip addr 
+  132  docker network create --help
+  133  docker network create --driver=bridge --subnet=172.28.0.0/16 --ip-range=172.28.5.0/24 --gateway=172.28.5.254 my-net-02
+  134  docker network ls
+  135  docker network inspect my-net-02
+  136  ip addr 
+  137  docker network ls 
+  138  docker run -itd  --name test-centos-11 --network my-net-02 centos:8 bash
+  139  docker run -itd  --name test-centos-12 --network my-net-02 centos:8 bash
+  140  docker network inspect my-net-02
+  141  docker run -itd  --name test-centos-13 --network my-net-02 centos:8 bash
+  142  docker network inspect my-net-02
+  143  docker exec -it test-centos-11 ip addr 
+  144  docker exec -it test-centos-13 ip addr 
+  145  docker network  ls 
+  146  docker run -itd  --name test-centos-15 --network none centos:8 bash
+  147  docker exec -it test-centos-15 ip addr 
+  148  hostname
+  149  ip addr 
+  150  docker network  ls 
+  151  docker run -itd  --name test-centos-20 --network host centos:8 bash
+  152  ip addr 
+  153  docker exec -it test-centos-20 ip addr 
+  154  docker ps 
+  155  docker exec -it test-centos-13 ip addr 
+  156  docker exec -it test-centos-11 ip addr 
+  157  docker exec -it test-centos-4 ip addr 
+  158  docker exec -it test-centos-15 ip addr 
+  159  docker exec -it test-centos-4 ip addr 
+  160  docker network ls 
+  161  docker network inspect host
+  162  ip addr 
+  163  docker exec -it test-centos-20 ip addr 
+  164  docker network ls 
+  165  docker kill $(docker ps -aq)
+  166  docker rm $(docker ps -aq)
+  167  ld
+  168  docker images 
+  169  docker run -d --name python-web-1 mypython-webapp:v2 
+  170  docker run -d --name apache-web-1 myubuntu-apache:v2
+  171  docker ps 
+  172  docker inspect apache-web-1
+  173  curl "172.17.0.3"
+  174  docker ps 
+  175  ks
+  176  ls
+  177  cd 01-Docker/01-Dockerfile/python-webapp/
+  178  ls
+  179  vim app.py 
+  180  ls
+  181  vim Dockerfile 
+  182  docker images 
+  183  docker build -t mypython-webapp:v3 . 
+  184  docker images 
+  185  docker run -d --name python-web-2 mypython-webapp:v3 
+  186  docker ps 
+  187  docker inspect python-web-2
+  188  curl "172.17.0.4"
+  189  curl 172.17.0.4:8081
+  190  ls
+  191  vim Dockerfile 
+  192  docker build -t mypython-webapp:v4 . 
+  193  docker run -d --name python-web-3 mypython-webapp:v4
+  194  docker ps 
+  195  curl 172.17.0.5:8081
+  196  curl 172.17.0.5:8081/hello
+  197  docker ps 
+  198  netstat -tulnp 
+  199  docker run -d --name python-web-4 -p 8080:8081 mypython-webapp:v4
+  200  docker ps 
+  201  netstat -tulnp 
+  202  systemctl status docker 
+  203  ls
+  204  docker ps 
+  205  ls
+  206  vim Dockerfile 
+  207  ls
+  208  vim app.py 
+  209  docker images 
+  210  docker build -t mypython-webapp:v5 . 
+  211  docker images 
+  212  docker run -d --name python-web-6  mypython-webapp:v5
+  213  docker ps 
+  214  vi app.py 
+  215  docker build -t mypython-webapp:v5 . 
+  216  vim app.py 
+  217  docker run -d --name python-web-7  mypython-webapp:v5
+  218  docker ps 
+  219  docker inspect 0ea19758c631
+  220  curl 172.17.0.7:80
+  221  curl 172.17.0.7:3306
+  222  curl 172.17.0.7:8081
+  223  docker run -d --name python-web-7 -p 8081:8081 mypython-webapp:v5
+  224  docker run -d --name python-web-10 -p 8081:8081 mypython-webapp:v5
+  225  docker ps 
+  226  docker run -d --name python-web-11 -P mypython-webapp:v5
+  227  docker ps 
+  228  docker images 
+  229  vim app.py 
+  230  ls
+  231  vim Dockerfile 
+  232  docker build -t mypython-webapp:v6 . 
+  233  docker images 
+  234  docker run -d --name Web-App-1 -P mypython-webapp:v6
+  235  docker ps 
+  236  cd ..
+  237  ls
+  238  cd ..
+  239  ls
+  240  cd ..
+  241  ls
+  242  history > Day2_Histrory.txt 

@@ -12,7 +12,7 @@ def hello():
 
 @app.route("/hello")
 def hello_page():
-    html="<h2>Welcome to Docker & Python based WebServer<\h2>"\
+    html="<h2>Welcome to Docker & Python based WebServer</h2>"\
          "<b>Hostname: {hostname}</b>"
     return html.format(hostname=socket.gethostname())
 
