@@ -8,13 +8,13 @@
 ## First clone this repository on your windows machine.
 
 ```
-git clone https://github.com/amitvashisttech/k8s-docker-vmware-08-June-2020.git
+git clone https://github.com/amitvashisttech/docker-k8s-AZ-05-July-2021.git
 ``` 
 
 ## Now provision three virtual machines with following commands:
 
 ```
-cd docker-k8s-AZ-05-July-2021/00-Vagrant-Setup
+cd docker-k8s-AZ-05-July-2021/00-Setup
 vagrant.exe up
 
 
