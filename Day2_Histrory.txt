@@ -240,3 +240,12 @@
   240  cd ..
   241  ls
   242  history > Day2_Histrory.txt 
+  243  ls
+  244  git add . ; git commit -m "Day2_Histrory.txt"; git push 
+  245  docker ps 
+  246  docker tag mypython-webapp:v6 amitvashist7/mypython-webapp:latest
+  247  docker images 
+  248  docker login 
+  249  docker push amitvashist7/mypython-webapp:latest
+  250  ls
+  251  history > Day2_Histrory.txt 
