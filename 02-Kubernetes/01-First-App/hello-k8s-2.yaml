@@ -7,7 +7,7 @@ metadata:
   name: hello-k8s-2
 spec:
   containers:
-  - image: nginx
+  - image: amitvashist7/k8s-tiny-web
     name: hello-k8s-2
     ports:
     - containerPort: 80
