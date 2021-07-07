@@ -26,3 +26,27 @@ NAME             READY   STATUS    RESTARTS   AGE
 hello-k8s        1/1     Running   0          6m22s
 mypythonwebapp   1/1     Running   0          4m58s
 ```
+
+
+## Note : In case you are getting dockerlimit error while deploying your pod, then below is the workaround:
+```
+docker login 
+ls -ltr /root/.docker/config.json
+```
+
+## Create Image Pull Secrets in K8s Cluster:
+```
+kubectl create secret generic regcred --from-file=.dockerconfigjson=/root/.docker/config.json --type=kubernetes.io/dockerconfigjson
+```
+
+## Now update your deployment file with your pull secret name under container section:
+```
+imagePullSecrets:
+   - name: regcred
+```
+
+## Sample Pod Deployment file is avalible with name: k8s-hello-2.yaml
+```
+kubectl apply -f k8s-hello-2.yaml
+```
+
