@@ -1,10 +1,11 @@
 apiVersion: apps/v1
-kind: DaemonSet
+kind: Deployment
 metadata:
-  name: helloworld-ds
+  name: helloworld-deployment
   labels:
     app: helloworld
 spec:
+  replicas: 5
   selector:
     matchLabels:
       app: helloworld
@@ -16,11 +17,9 @@ spec:
       containers:
       - name: k8s-demo
         image: amitvashist7/k8s-tiny-web
+        imagePullPolicy: IfNotPresent
         ports:
         - name: node-port
           containerPort: 80
-      tolerations:
-      - key: "node-role.kubernetes.io/master"
-        operator: "Exists"
-        effect: "NoSchedule"
-        
+      imagePullSecrets:
+      - name: regcred

@@ -1,11 +1,10 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: DaemonSet
 metadata:
-  name: helloworld-deployment
+  name: helloworld-ds
   labels:
     app: helloworld
 spec:
-  replicas: 3
   selector:
     matchLabels:
       app: helloworld
@@ -20,3 +19,13 @@ spec:
         ports:
         - name: node-port
           containerPort: 80
+      tolerations:
+      - key: "node-role.kubernetes.io/master"
+        operator: "Exists"
+        effect: "NoSchedule"
+      - key: "app"
+        operator: "Equal"
+        value: "myapp"
+        effect: "NoSchedule"
+
+        
